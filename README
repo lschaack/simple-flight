@@ -9,13 +9,12 @@ or just:
 	After crashing into the ground, the physics will stop updating, so press space a couple times to add some speed if the airplane gets close to the ground.
 	An easy way to look around is just to fly where you want to go and press 'q' a couple of times. This slows the velocity update so that five presses yields 1/32 speed, which is probably plenty. Another five presses is 1/1024 speed, so that's definitely enough.
 
-
-##### Key bindings #####
-
 old fence object:
 	https://www.turbosquid.com/FullPreview/Index.cfm/ID/733492
 grass texture (just the low_poly_grass2.png file):
 	https://www.turbosquid.com/FullPreview/Index.cfm/ID/662021
+
+##### Key bindings #####
 
 Key bindings:
 mouse      Look and fly around
