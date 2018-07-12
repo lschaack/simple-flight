@@ -1039,8 +1039,8 @@ static void drawApartment() {
     for (i = 0; i < 5; i++) {
         glPushMatrix();
         for (j = 0; j < 3; j++) {
-            // drawRoom((i == 1 && j == 2)? 1 : 0);
-            drawRoom(1);
+            // only draw furniture in half of rooms for a slight speed increase
+            drawRoom(i % 2 != j % 2? 1 : 0);
             glTranslated(0, 5.0, 0);
         }
         glPopMatrix();
@@ -1075,7 +1075,7 @@ static void drawApartment() {
 
         glTexCoord2d(0, 0); glVertex3d( 5.0, 0, 0);
         glTexCoord2d(2, 0); glVertex3d(-5.0, 0, 0);
-        glTexCoord2d(2, 2); glVertex3d(   0, 5.0, 0.3);
+        glTexCoord2d(2, 2); glVertex3d(0, 5.0, 0.3);
         glTexCoord2d(0, 0); glVertex3d( 5.0, 0, 0);
 
         glEnd();
@@ -1725,6 +1725,7 @@ static void skySphere(double r, unsigned int texture) {
     glBegin(GL_TRIANGLE_FAN);
     glNormal3f(0, -1, 0);
     skyTexCoord(0, 90);
+    glVertex3f(0, r, 0);
     for (th = 0; th <= 360; th += dTh) {
         ph = 90 - dPh;
         glNormal3f(-r * Cos(th) * Cos(ph),
@@ -1739,8 +1740,7 @@ static void skySphere(double r, unsigned int texture) {
 
     // main sphere
     glBegin(GL_QUAD_STRIP);
-    // dPh - 90 in order to only nearly close off the sphere
-    for (ph = dPh; ph < (90 - dPh); ph += dPh) {
+    for (ph = -90; ph < (90 - dPh); ph += dPh) {
         for (th = 360; th >= 0; th -= dTh) {
             glNormal3f(-r * Cos(th) * Cos(ph),
                        -r * Sin(ph),
