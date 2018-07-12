@@ -2405,31 +2405,31 @@ int main(int argc,char* argv[])
     glutIdleFunc(idle);
 
     //  Load textures
-    metallic = LoadTexBMP("brushed_metal.bmp");
-    hardwood = LoadTexBMP("hardwood2.bmp");
-    tabletop = LoadTexBMP("tabletop.bmp");
-    pavement = LoadTexBMP("pavement.bmp");
-    plaster = LoadTexBMP("plaster4.bmp");
-    shingle = LoadTexBMP("shingle.bmp");
-    plastic = LoadTexBMP("plastic.bmp");
-    siding = LoadTexBMP("siding_white.bmp");
-    paint = LoadTexBMP("white_paint.bmp");
-    grass = LoadTexBMP("grass2_lres.bmp");
-    slats = LoadTexBMP("wood_slats.bmp");
-    fence = LoadTexBMP("old_fence.bmp");
-    soda = LoadTexBMP("soda2.bmp");
-    road = LoadTexBMP("road.bmp");
-    door = LoadTexBMP("door.bmp");
-    xing = LoadTexBMP("xing.bmp");
-    sky = LoadTexBMP("skydome.bmp");
-    sod = LoadTexBMP("grass2.bmp");
-    lid = LoadTexBMP("soda-top.bmp");
+    metallic = LoadTexBMP("./textures/brushed_metal.bmp");
+    hardwood = LoadTexBMP("./textures/hardwood2.bmp");
+    tabletop = LoadTexBMP("./textures/tabletop.bmp");
+    pavement = LoadTexBMP("./textures/pavement.bmp");
+    plaster = LoadTexBMP("./textures/plaster4.bmp");
+    shingle = LoadTexBMP("./textures/shingle.bmp");
+    plastic = LoadTexBMP("./textures/plastic.bmp");
+    siding = LoadTexBMP("./textures/siding_white.bmp");
+    paint = LoadTexBMP("./textures/white_paint.bmp");
+    grass = LoadTexBMP("./textures/grass2_lres.bmp");
+    slats = LoadTexBMP("./textures/wood_slats.bmp");
+    fence = LoadTexBMP("./textures/old_fence.bmp");
+    soda = LoadTexBMP("./textures/soda2.bmp");
+    road = LoadTexBMP("./textures/road.bmp");
+    door = LoadTexBMP("./textures/door.bmp");
+    xing = LoadTexBMP("./textures/xing.bmp");
+    sky = LoadTexBMP("./textures/skydome.bmp");
+    sod = LoadTexBMP("./textures/grass2.bmp");
+    lid = LoadTexBMP("./textures/soda-top.bmp");
 
     //  Load objects
-    fence_obj = LoadOBJ("old_fence.obj");
+    fence_obj = LoadOBJ("./objects/old_fence.obj");
 
     //  Load shaders
-    grass_shader = CreateShaderProg("grass.vert","grass.frag");
+    grass_shader = CreateShaderProg("./shaders/grass.vert","./shaders/grass.frag");
     tex_loc = glGetUniformLocation(grass_shader, "grass");
 
     // get some random numbers for grass rotation
