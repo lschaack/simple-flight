@@ -8,6 +8,7 @@
  *  Key bindings:
  *  mouse      Look and fly around
  *  arrows     Look and fly around, much slower than the mouse
+ *  r/R        Back to starting position
  * 
  *  space      Give the airplane a "push," can be held down to act as a sort of
  *                throttle, but the paper airplane texture will glitch back and
@@ -2212,6 +2213,11 @@ void key(unsigned char ch,int x,int y)
         look_window = 1;
     } else if (ch == 'p' || ch == 'P') {
         print = !print;
+    } else if (ch == 'r' || ch == 'R') {
+        // restart
+        pos[0] = 0;
+        pos[1] = 15;
+        pos[2] = -15;
     }
 
     //  Reproject
